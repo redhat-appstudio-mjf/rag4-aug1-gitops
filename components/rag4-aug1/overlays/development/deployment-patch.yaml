@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
-metadata:   
-  annotations:  
+metadata:
+  annotations:
     tad.gitops.set/image: ".spec.template.spec.containers[0].image"
     tad.gitops.get/image: ".spec.template.spec.containers[0].image"
     tad.gitops.set/replicas: ".spec.replicas"
-    tad.gitops.get/replicas: ".spec.replicas" 
+    tad.gitops.get/replicas: ".spec.replicas"
   name: rag4-aug1
 spec:
-  replicas: 1 
-  template: 
+  replicas: 1
+  template:
     spec:
       containers:
-      - image: quay.io/redhat-ai-dev/ai-template-bootstrap-app:latest # use pre-built to bootstrap 
-        name: app-interface 
+        - image: quay.io/maysunfaisal/rag4-aug1:d6f2dc009d3e828475c03e7c9a789cfc3cef34db@sha256:ddf07bcf4aebc3baf8f889993a3ffd6fb7dc295276f2f6e1b02c5144b3c74742 # use pre-built to bootstrap 
+          name: app-interface
